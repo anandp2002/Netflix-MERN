@@ -25,4 +25,4 @@ const userSchema = mongoose.Schema({
   },
 });
 
-export const user = mongoose.model('User', userSchema); //mongoose convert User to users
+export const User = mongoose.model('User', userSchema); //mongoose convert User to users

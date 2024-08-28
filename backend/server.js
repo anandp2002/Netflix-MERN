@@ -7,6 +7,7 @@ import { connectDB } from './config/db.js';
 const app = express();
 const PORT = ENV_VARS.PORT;
 
+app.use(express.json()); //will allow us to use rq.body
 app.use('/api/v1/auth', authRoutes);
 
 app.listen(PORT, () => {
