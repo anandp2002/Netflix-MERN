@@ -1,10 +1,16 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import Footer from '../../components/Footer';
 
 const AuthScreen = () => {
   const [email, setEmail] = useState('');
+  const navigate = useNavigate();
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    navigate('/signup?email=' + email);
+  };
   return (
     <div className="hero-bg relative ">
       {/* Navbar */}
@@ -29,7 +35,10 @@ const AuthScreen = () => {
         <p className="mb-4">
           Ready to watch ? Enter your email to create or restart your membership{' '}
         </p>
-        <form className="flex flex-col md:flex-row gap-4 w-1/2">
+        <form
+          className="flex flex-col md:flex-row gap-4 w-1/2"
+          onSubmit={handleFormSubmit}
+        >
           <input
             type="email"
             className="p-2 rounded flex-1 bg-black/80 border border-gray-700"
@@ -194,6 +203,7 @@ const AuthScreen = () => {
           </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );
