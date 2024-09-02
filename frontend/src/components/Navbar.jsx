@@ -62,7 +62,7 @@ const Navbar = () => {
       </header>
       {/* mobile navbar items */}
       {isMobileMenuOpen && (
-        <div className="px-3 w-full py-2 sm:hidden z-50 bg-slate-950">
+        <div className="px-3 w-full py-2 sm:hidden relative z-50 bg-black">
           <Link
             to={'/'}
             className="block hover:bg-gray-900 rounded-md p-2"
