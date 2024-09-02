@@ -11,6 +11,7 @@ import Shimmer from '../../components/Shimmer';
 import { useContentStore } from '../../store/content';
 import MovieSlider from '../../components/MovieSlider';
 import { useState } from 'react';
+import Footer from '../../components/Footer';
 
 const HomeScreen = () => {
   const { trendingContent } = useGetTrendingContent();
@@ -86,6 +87,7 @@ const HomeScreen = () => {
               <MovieSlider key={category} category={category} />
             ))}
       </div>
+      <Footer />
     </>
   );
 };
