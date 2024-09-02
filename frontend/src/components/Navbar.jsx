@@ -2,12 +2,15 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { LogOut, Menu, Search, X } from 'lucide-react';
 import { useAuthStore } from '../store/authUser';
+import { useContentStore } from '../store/content';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { user, logout } = useAuthStore();
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+
+  const { contentType, setContentType } = useContentStore();
 
   return (
     <>
@@ -23,10 +26,30 @@ const Navbar = () => {
 
           {/* desktop navbar items */}
           <div className="hidden sm:flex gap-2 items-center">
-            <Link to="/" className="hover:bg-gray-900 rounded-md py-1 px-2">
+            <Link
+              to="/"
+              className={`${
+                contentType === 'movie'
+                  ? 'bg-red-700'
+                  : 'bg-transparent hover:underline'
+              } rounded-md py-1 px-2`}
+              onClick={() => {
+                setContentType('movie');
+              }}
+            >
               Movies
             </Link>
-            <Link to="/" className="hover:bg-gray-900 rounded-md py-1 px-2">
+            <Link
+              to="/"
+              className={`${
+                contentType === 'tv'
+                  ? 'bg-red-700'
+                  : 'bg-transparent hover:underline'
+              } rounded-md py-1 px-2`}
+              onClick={() => {
+                setContentType('tv');
+              }}
+            >
               Tv Shows
             </Link>
             <Link
@@ -65,21 +88,35 @@ const Navbar = () => {
         <div className="px-3 w-full py-2 sm:hidden relative z-50 bg-black">
           <Link
             to={'/'}
-            className="block hover:bg-gray-900 rounded-md p-2"
-            onClick={toggleMobileMenu}
+            className={`${
+              contentType === 'movie'
+                ? 'bg-red-700'
+                : 'bg-transparent hover:underline'
+            } rounded-md p-2 block`}
+            onClick={() => {
+              toggleMobileMenu();
+              setContentType('movie');
+            }}
           >
             Movies
           </Link>
           <Link
             to={'/'}
-            className="block hover:bg-gray-900 rounded-md p-2"
-            onClick={toggleMobileMenu}
+            className={`${
+              contentType === 'tv'
+                ? 'bg-red-700'
+                : 'bg-transparent hover:underline'
+            } rounded-md p-2 block`}
+            onClick={() => {
+              toggleMobileMenu();
+              setContentType('tv');
+            }}
           >
             Tv Shows
           </Link>
           <Link
             to={'/history'}
-            className="block hover:bg-gray-900 rounded-md p-2"
+            className="block hover:underline rounded-md p-2"
             onClick={toggleMobileMenu}
           >
             Search History

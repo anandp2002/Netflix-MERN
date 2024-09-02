@@ -1,14 +1,23 @@
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import { Info, Play } from 'lucide-react';
+import useGetTrendingContent from '../../hooks/useGetTrendingContent';
+import { ORIGINAL_IMG_BASE_URL } from '../../utils/constants';
+import Shimmer from '../../components/Shimmer';
 
 const HomeScreen = () => {
+  const { trendingContent } = useGetTrendingContent();
+
+  if (!trendingContent) {
+    return <Shimmer />;
+  }
+
   return (
     <>
       <div className="relative h-screen text-white">
         <Navbar />
         <img
-          src="/extraction.jpg"
+          src={ORIGINAL_IMG_BASE_URL + trendingContent?.backdrop_path}
           alt="Hero img"
           className="absolute top-0 left-0 object-cover w-full h-full -z-50"
         />
@@ -20,21 +29,22 @@ const HomeScreen = () => {
           <div className="bg-gradient-to-b from-black via-transparent to-transparent absolute top-0 left-0 w-full h-full -z-10" />
           <div className="max-w-2xl">
             <h1 className="mt-4 text-6xl font-extrabold text-balance">
-              Extraction
+              {trendingContent?.title || trendingContent?.name}
             </h1>
-            <p className="mt-2 text-lg">2014 | 18+</p>
+            <p className="mt-2 text-lg">
+              {trendingContent?.release_date?.split('-')[0] ||
+                trendingContent?.first_air_date?.split('-')[0]}{' '}
+              | {trendingContent?.adult ? '18+' : 'PG-13'}
+            </p>
             <p className="mt-4 text-lg">
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that it has a more-or-less normal
-              distribution of letters, as opposed to using 'Content here,
-              content here', making it look like readable English. Many desktop
-              publishing packages and web page editors now use Lorem Ipsum as
+              {trendingContent?.overview.length > 200
+                ? trendingContent?.overview.slice(0, 200) + '...'
+                : trendingContent?.overview}
             </p>
           </div>
           <div className="flex mt-8">
             <Link
-              to={'/watch/123'}
+              to={`/watch/${trendingContent?.id}`}
               className="bg-white hover:bg-white/80 text-black font-bold py-3 px-4 rounded mr-4 flex
 							 items-center"
             >
@@ -43,7 +53,7 @@ const HomeScreen = () => {
             </Link>
 
             <Link
-              to={'/watch/123'}
+              to={`/watch/${trendingContent?.id}`}
               className="bg-gray-500/70 hover:bg-gray-500 text-white py-3 px-4 rounded flex items-center"
             >
               <Info className="size-6 mr-2" />
