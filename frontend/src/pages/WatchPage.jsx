@@ -22,6 +22,9 @@ const WatchPage = () => {
   const sliderRef = useRef(null);
 
   useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+
     const getTrailers = async () => {
       try {
         const res = await axios.get(`/api/v1/${contentType}/${id}/trailers`);

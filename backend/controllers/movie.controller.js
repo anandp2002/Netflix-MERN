@@ -3,7 +3,7 @@ import { fetchFromTMDB } from '../services/tmdb.service.js';
 export async function getTrendingMovie(req, res) {
   try {
     const data = await fetchFromTMDB(
-      'https://api.themoviedb.org/3/trending/movie/day?language=en-US'
+      'https://api.themoviedb.org/3/trending/movie/day'
     );
     const randomMovie =
       data.results[Math.floor(Math.random() * data.results?.length)];
@@ -18,7 +18,7 @@ export async function getMovieTrailers(req, res) {
   const { id } = req.params;
   try {
     const data = await fetchFromTMDB(
-      `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`
+      `https://api.themoviedb.org/3/movie/${id}/videos`
     );
     res.json({ success: true, trailers: data.results });
   } catch (error) {
@@ -33,7 +33,7 @@ export async function getMovieDetails(req, res) {
   const { id } = req.params;
   try {
     const data = await fetchFromTMDB(
-      `https://api.themoviedb.org/3/movie/${id}?language=en-US`
+      `https://api.themoviedb.org/3/movie/${id}`
     );
     res.status(200).json({ success: true, content: data });
   } catch (error) {
@@ -48,7 +48,7 @@ export async function getSimilarMovies(req, res) {
   const { id } = req.params;
   try {
     const data = await fetchFromTMDB(
-      `https://api.themoviedb.org/3/movie/${id}/similar?language=en-US&page=1`
+      `https://api.themoviedb.org/3/movie/${id}/similar?page=1`
     );
     res.status(200).json({ success: true, similar: data.results });
   } catch (error) {
@@ -60,7 +60,7 @@ export async function getMoviesByCategory(req, res) {
   const { category } = req.params;
   try {
     const data = await fetchFromTMDB(
-      `https://api.themoviedb.org/3/movie/${category}?language=en-US&page=1`
+      `https://api.themoviedb.org/3/movie/${category}?page=1`
     );
     res.status(200).json({ success: true, content: data.results });
   } catch (error) {

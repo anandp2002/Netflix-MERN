@@ -111,7 +111,7 @@ const SearchPage = () => {
             </button>
           </form>
 
-          {loading || !imagesLoaded ? (
+          {loading && !imagesLoaded ? (
             <SearchPageSkeleton /> // Display skeleton while loading or images are not fully loaded
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-0 sm:px-10 rounded-lg">
