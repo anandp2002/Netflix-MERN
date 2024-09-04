@@ -1,6 +1,8 @@
 import { fetchFromTMDB } from '../services/tmdb.service.js';
 
 export async function getTrendingMovie(req, res) {
+  console.log('getTrendingMovie called');
+
   try {
     const data = await fetchFromTMDB(
       'https://api.themoviedb.org/3/trending/movie/day'
