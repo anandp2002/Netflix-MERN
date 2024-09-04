@@ -13,7 +13,7 @@ import NotFound from './pages/NotFound';
 
 function App() {
   const { user, isCheckingAuth, authCheck } = useAuthStore();
-  console.log('Auth user is here : ', user);
+  // console.log('Auth user is here : ', user);
 
   useEffect(() => {
     authCheck();

@@ -108,7 +108,7 @@ const WatchPage = () => {
           <Navbar />
           <div className="text-center mx-auto px-4 py-8 h-full mt-40">
             <h2 className="text-2xl sm:text-5xl font-bold text-balance">
-              Content not found 😞
+              Content not found !
             </h2>
           </div>
         </div>
@@ -203,9 +203,11 @@ const WatchPage = () => {
           />
         </div>
 
-        {similarContent.length > 0 && (
+        {similarContent.length > 0 ? (
           <div className="mt-12 max-w-5xl mx-auto relative">
-            <h3 className="text-3xl font-bold mb-4">Similar Movies/Tv Show</h3>
+            <h3 className="text-3xl font-bold mb-4">
+              Similar {contentType == 'movie' ? 'Movies' : 'TV Shows'}
+            </h3>
 
             <div
               className="flex overflow-x-scroll scrollbar-hide gap-4 pb-4 group"
@@ -244,6 +246,10 @@ const WatchPage = () => {
                 onClick={scrollLeft}
               />
             </div>
+          </div>
+        ) : (
+          <div className="bg-black py-6 flex items-center justify-center">
+            No Similar Contents Available !
           </div>
         )}
       </div>
