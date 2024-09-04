@@ -15,7 +15,6 @@ const app = express();
 const PORT = ENV_VARS.PORT;
 
 const __dirname = path.resolve();
-s;
 
 app.use(express.json()); //will allow us to use rq.body
 app.use(cookieParser()); //will allow us to use cookies
