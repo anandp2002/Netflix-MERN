@@ -12,7 +12,7 @@
 
 ## Deployed App
 
-[Check out the deployed app here !](https://anandpnetflix.onrender.com)
+[https://anandpnetflix.onrender.com](https://anandpnetflix.onrender.com)
 
 
 # Set Up .env file
