@@ -1,14 +1,14 @@
 ![image](https://github.com/user-attachments/assets/50ba6881-7168-42e2-b7f2-bcec49a4f1ba)
 
-⚛️ Tech Stack : React.js, Node.js, Express.js, MongoDB, Tailwind
-🔐 Authentication with JWT
-📱 Responsive UI
-🎬 Fetch Movies and Tv Shows
-🔎 Search for Actors and Movies
-🎥 Watch Trailers
-🔥 Fetch Search History
-🐱‍👤 Get Similar Movies/Tv Shows
-💙 Awesome Landing Page
+    ⚛️ Tech Stack : React.js, Node.js, Express.js, MongoDB, Tailwind
+    🔐 Authentication with JWT
+    📱 Responsive UI
+    🎬 Fetch Movies and Tv Shows
+    🔎 Search for Actors and Movies
+    🎥 Watch Trailers
+    🔥 Fetch Search History
+    🐱‍👤 Get Similar Movies/Tv Shows
+    💙 Awesome Landing Page
 
 ## Deployed App
 
