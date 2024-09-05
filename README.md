@@ -10,8 +10,8 @@
 🐱‍👤 Get Similar Movies/Tv Shows
 💙 Awesome Landing Page
 
-# Live demo : 
-        https://anandpnetflix.onrender.com/
+# Live demo 
+    [Check out the deployed app here!](https://anandpnetflix.onrender.com/)
 
 # Set Up .env file
     PORT=5000
@@ -21,8 +21,8 @@
     TMDB_API_KEY=your_tmdb_api_key
 
 # To run this app locally
-      1. clone this repo 
-              git clone https://github.com/anandp2002/Netflix-MERN.git
-      2. set up .env file
-      3. npm run build
-      4. npm run start
+    1. clone this repo 
+       git clone https://github.com/anandp2002/Netflix-MERN.git
+    2. set up .env file
+    3. npm run build
+    4. npm run start
