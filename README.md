@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/50ba6881-7168-42e2-b7f2-bcec49a4f1ba)
+
 # Set Up .env file
     PORT=5000
     MONGO_URI=your_mongo_uri
