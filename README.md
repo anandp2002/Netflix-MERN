@@ -11,7 +11,7 @@
 💙 Awesome Landing Page
 
 # Live demo 
-    [Check out the deployed app here!](https://anandpnetflix.onrender.com/)
+    [!Check out the deployed app here](https://anandpnetflix.onrender.com/)
 
 # Set Up .env file
     PORT=5000
