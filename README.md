@@ -25,6 +25,7 @@
 # To run this app locally
     1. clone this repo 
        git clone https://github.com/anandp2002/Netflix-MERN.git
+       cd Netflix-MERN/
     2. set up .env file
     3. npm run build
     4. npm run start
